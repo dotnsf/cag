@@ -1,0 +1,16 @@
+swagger: '2.0'
+info:
+  description: API ドキュメント
+  version: 0.0.1
+  title: Platform REST APIs
+host: localhost:3000
+basePath: /
+tags:
+##########
+schemes:
+  - http
+  - https
+paths:
+##########
+definitions:
+##########

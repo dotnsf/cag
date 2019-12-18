@@ -1,0 +1,12 @@
+  **********Request:
+    type: object
+    properties:
+      _id:
+        type: string
+        description: ********** id（空の場合は新規作成）
+      _rev:
+        type: string
+        description: リビジョン（更新の場合は必須）
+      name:
+        type: string
+        description: **********名

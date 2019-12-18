@@ -1,0 +1,74 @@
+  /**********/{id}:
+    get:
+      tags:
+        - **********
+      summary: 指定した１つの ********** データを取り出す
+      description: \{id\} で指定した ********** id のデータを一件取りだす
+      parameters:
+        - name: id
+          type: string
+          in: path
+          description: ********** id
+          required: true
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+    delete:
+      tags:
+        - **********
+      summary: 指定した１つの ********** データを削除する
+      description: \{id\} で指定した ********** id のデータを一件削除する
+      parameters:
+        - name: id
+          type: string
+          in: path
+          description: ********** id
+          required: true
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+    put:
+      tags:
+        - **********
+      summary: ********** データを更新する
+      description: ********** データを更新する
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/**********Request'
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+  /**********:
+    get:
+      tags:
+        - **********
+      summary: ********** データを取り出す
+      description: ********** データを全件取りだす
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
+    post:
+      tags:
+        - **********
+      summary: ********** データを作成する
+      description: ********** データを作成する
+      parameters:
+        - name: body
+          in: body
+          schema:
+            $ref: '#/definitions/**********Request'
+      responses:
+        '200':
+          description: 成功
+        '400':
+          description: エラー
