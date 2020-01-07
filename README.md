@@ -9,7 +9,7 @@ CRUD REST API generator for IBM Cloudant database.
 
 - Prepare IBM Cloudant db instance. Find username and password for that instance.
 
-- Edit settings.js with your username and password.
+- Edit settings.js with your username and password, or apikey and url.
 
 - You can also edit settings.js which db would be targeted for generating REST API.
 
@@ -29,4 +29,4 @@ This code is licensed under MIT.
 
 ## Copyright
 
-2019 [K.Kimura @ Juge.Me](https://github.com/dotnsf) all rights reserved.
+2019-2020 [K.Kimura @ Juge.Me](https://github.com/dotnsf) all rights reserved.

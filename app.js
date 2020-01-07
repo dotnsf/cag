@@ -10,6 +10,15 @@ var dbs = [];
 
 if( settings.db_username && settings.db_password ){
   cloudant = Cloudantlib( { account: settings.db_username, password: settings.db_password } );
+}else if( settings.db_apikey && settings.db_url ){
+  cloudant = new CloudantLib({
+    url: settings.db_url,
+    plugins: {
+      iamauth: {
+        iamApikey: settings.db_apikey
+      }
+    }
+  });
 }
 
 if( cloudant ){
