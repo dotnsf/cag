@@ -39,19 +39,20 @@ if( cloudant ){
   fs.copyFile( 'templates/LICENSE', 'out/LICENSE', function(){} );
   fs.copyFile( 'templates/package.json', 'out/package.json', function(){} );
   //fs.copyFile( 'templates/README.md', 'out/README.md', function(){} );
-  fs.mkdirSync( 'out/public' );
-  fs.copyFile( 'templates/doc/favicon-16x16.png', 'out/public/favicon-16x16.png', function(){} );
-  fs.copyFile( 'templates/doc/favicon-32x32.png', 'out/public/favicon-32x32.png', function(){} );
-  fs.copyFile( 'templates/doc/index.html', 'out/public/index.html', function(){} );
-  fs.copyFile( 'templates/doc/oauth2-redirect.html', 'out/public/oauth2-redirect.html', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui-bundle.js', 'out/public/swagger-ui-bundle.js', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui-bundle.js.map', 'out/public/swagger-ui-bundle.js.map', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui-standalone-preset.js', 'out/public/swagger-ui-standalone-preset.js', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui-standalone-preset.js.map', 'out/public/swagger-ui-standalone-preset.js.map', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui.css', 'out/public/swagger-ui.css', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui.css.map', 'out/public/swagger-ui.css.map', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui.js', 'out/public/swagger-ui.js', function(){} );
-  fs.copyFile( 'templates/doc/swagger-ui.js.map', 'out/public/swagger-ui.js.map', function(){} );
+  fs.mkdir( 'out/public', function(){
+    fs.copyFile( 'templates/doc/favicon-16x16.png', 'out/public/favicon-16x16.png', function(){} );
+    fs.copyFile( 'templates/doc/favicon-32x32.png', 'out/public/favicon-32x32.png', function(){} );
+    fs.copyFile( 'templates/doc/index.html', 'out/public/index.html', function(){} );
+    fs.copyFile( 'templates/doc/oauth2-redirect.html', 'out/public/oauth2-redirect.html', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui-bundle.js', 'out/public/swagger-ui-bundle.js', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui-bundle.js.map', 'out/public/swagger-ui-bundle.js.map', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui-standalone-preset.js', 'out/public/swagger-ui-standalone-preset.js', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui-standalone-preset.js.map', 'out/public/swagger-ui-standalone-preset.js.map', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui.css', 'out/public/swagger-ui.css', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui.css.map', 'out/public/swagger-ui.css.map', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui.js', 'out/public/swagger-ui.js', function(){} );
+    fs.copyFile( 'templates/doc/swagger-ui.js.map', 'out/public/swagger-ui.js.map', function(){} );
+  });
 
   //. （exports.dbs 以外の行を対象に）settings.js をコピー
   var out_settings = '';
@@ -113,7 +114,7 @@ if( cloudant ){
       template_readme = tmp8[0] + templates_readme_dbs + tmp8[1];
       fs.writeFileSync( 'out/README.md', template_readme );
 
-      console.log( 'done.' );
+      console.log( 'done. try "$ cd ./out; npm install; node app" and browse http://localhost:3000/' );
     }else{
       console.log( 'no target dbs found.' );
     }
