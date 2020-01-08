@@ -37,6 +37,18 @@ CRUD REST API generator for IBM Cloudant database.
 
 - Now you can browse your generated Swagger API document in http://localhost:3000/ .
 
+  - You would see CRUD APIs for each dbs. If name of db is 'mydb', then you will find following 5 REST APIs for each dbs:
+
+    - GET /mydb : read all docs in mydb.
+
+    - GET /mydb/{id} : read a doc with id={id} in mydb
+
+    - POST /mydb : create a doc in mydb
+
+    - PUT /mydb/{id} : update a doc with id={id} in mydb
+
+    - DELETE /mydb/{id} : delete a doc with id={id} in mydb 
+
 ## How to publish Swagger API document in public.
 
 - Edit ./out/public/swagger.yaml(L.6)'s host value with your published hostname and port.
